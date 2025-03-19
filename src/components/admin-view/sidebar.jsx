@@ -1,7 +1,7 @@
 
 function AdminSideBar() {
     return (
-        <div>admin sidebar</div>
+        <div className="bg-black text-white py-5">Admin sidebar</div>
     )
     
 }

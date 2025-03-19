@@ -1,7 +1,7 @@
 
 function AdminHeader() {
     return (
-        <div>admin sidebar</div>
+        <div>admin Header</div>
     )
     
 }
