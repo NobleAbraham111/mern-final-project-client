@@ -18,22 +18,41 @@ import ShoppingListing from "./components/shopping-view/listing";
 import ShoppingCheckOut from "./components/shopping-view/checkout";
 import ShoppingAccount from "./components/shopping-view/account";
 import ShoppingHome from "./components/shopping-view/home";
+import CheckAuth from "./components/common/check-auth";
+import { Check } from "lucide-react";
+import UnauthPage from "./Pages/unauth-page";
+
+
 function App() {
-  const [count, setCount] = useState(0);
+
+
+  const isAuthenticated = false; 
+  const user = {
+    name: "null",
+    role : 'admin'
+  };
 
   return (
     <>
 
-      <div className="flex flex-col overflow-hidden bg-black text-center text-2xl">
+      <div className="flex flex-col overflow-hidden bg-white">
           <Routes>
 
-            <Route path="/auth" element={<AuthLayout />}>
+            <Route path="/auth" element={
+              <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+                <AuthLayout />
+              </CheckAuth>
+            }>
               <Route path="login" element={<AuthLogin />} />
               <Route path="register" element={<AuthRegister />} />
             </Route>
 
 
-            <Route path="/admin" element={<AdminLayout />}>
+            <Route path="/admin" element={
+              <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+                <AdminLayout />
+              </CheckAuth>
+            }>
             <Route path="dashboard" element={<AdminDashBoard/>}/>
             <Route path="products" element={<AdminProducts/>}/>
             <Route path="orders" element={<AdminOrders/>}/>
@@ -41,7 +60,12 @@ function App() {
             
             </Route>
 
-            <Route path="/shop" element={<ShoppingLayout/>}> 
+            <Route path="/shop" 
+            element={
+              <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+                <ShoppingLayout />
+              </CheckAuth>
+            }> 
 
             <Route path="home" element={<ShoppingHome />} />
             <Route path="listing" element={<ShoppingListing/>}/>
@@ -49,7 +73,10 @@ function App() {
             <Route path="account" element={<ShoppingAccount/>}/>  
             
             </Route>
+            
+            <Route path="/unauth-page" element={<UnauthPage />} />
             <Route path="*" element={<NotFound />} />
+             
           </Routes>
         
       </div>
