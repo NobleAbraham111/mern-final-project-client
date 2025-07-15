@@ -13,7 +13,7 @@ import AdminProducts from "./Pages/admin-view/products";
 import AdminOrders from "./Pages/admin-view/orders";
 import AdminFeatures from "./Pages/admin-view/features";
 import ShoppingLayout from "./Pages/shopping-view/layout";
-import NotFound from "./Pages/not-found";
+
 import ShoppingListing from "./components/shopping-view/listing";
 import ShoppingCheckOut from "./components/shopping-view/checkout";
 import ShoppingAccount from "./components/shopping-view/account";
@@ -21,6 +21,7 @@ import ShoppingHome from "./components/shopping-view/home";
 import CheckAuth from "./components/common/check-auth";
 import { Check } from "lucide-react";
 import UnauthPage from "./Pages/unauth-page";
+import NotFound from "./Pages/not-found";
 
 
 function App() {

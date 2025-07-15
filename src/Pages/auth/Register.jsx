@@ -12,14 +12,9 @@ const initialState = {
 function AuthRegister() {
     const [formData, setFormData] = useState(initialState);
 
-    function onSubmit(event) {
-        event.preventDefault(); // Prevent the default form submission behavior
+    function onSubmit() {}
+      // Prevent the default form submission behavior
         console.log(formData); // Log the form data when the form is submitted
-    }
-
-
-
-
 
     return (
 

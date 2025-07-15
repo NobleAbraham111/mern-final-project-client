@@ -18,11 +18,6 @@ function AuthLogin() {
         console.log(formData);
         
     }
-
-
-
-
-
     return (
 
         <div className="mx-auto w-full max-w-md space-y-6">
@@ -31,7 +26,6 @@ function AuthLogin() {
                 <h1 className="text-3xl font-bold tracking-tight text-foreground">
                     Sign in  to your Account
                 </h1>
-
                 <p className="mt-2 font-bold tracking-tight text-foreground">
                     don't have an account?{' '}
                     <Link className="font-medium ml-2 text-primary hover:underline"
@@ -40,7 +34,6 @@ function AuthLogin() {
                 </p>
             </div>
             
-
             {/* 
                 CommonForm Component:
                 - formControls: An array of form control configurations (e.g., input fields, labels).
